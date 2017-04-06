@@ -1,6 +1,6 @@
 # Fasten Tech
 
-Index page for [Fasten Tech](http://cathayandy.com)
+Index page for [Fasten Tech](https://cathayandy.github.io/fasten-tech/)
 
 ## Summary
 
