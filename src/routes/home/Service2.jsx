@@ -4,8 +4,9 @@ import TweenOne from 'rc-tween-one';
 import OverPack from 'rc-scroll-anim/lib/ScrollOverPack';
 
 class Content extends React.Component {
+
   static defaultProps = {
-    className: 'content0',
+    className: 'content1',
   };
 
   render() {
@@ -13,10 +14,10 @@ class Content extends React.Component {
     const isMode = props.isMode;
     delete props.isMode;
     const animType = {
-      queue: isMode ? 'bottom' : 'right',
+      queue: isMode ? 'bottom' : 'left',
       one: isMode ? { y: '+=30', opacity: 0, type: 'from' }
-        : { x: '-=30', opacity: 0, type: 'from' },
-    }
+        : { x: '+=30', opacity: 0, type: 'from' },
+    };
     return (
       <div
         {...props}
@@ -26,6 +27,20 @@ class Content extends React.Component {
           className={`content-template ${props.className}`}
           location={props.id}
         >
+          <QueueAnim
+            type={animType.queue}
+            className={`${props.className}-text`}
+            key="text"
+            leaveReverse
+            ease={['easeOutCubic', 'easeInCubic']}
+            id={`${props.id}-textWrapper`}
+          >
+            <h1 key="h1" id={`${props.id}-title`}>
+              控制和APP方案咨询
+            </h1>
+            <p key="p" id={`${props.id}-content`}>
+            </p>
+          </QueueAnim>
           <TweenOne
             key="img"
             animation={animType.one}
@@ -34,29 +49,13 @@ class Content extends React.Component {
             resetStyleBool
           >
             <span id={`${props.id}-img`}>
-              <img width="100%" src="https://zos.alipayobjects.com/rmsportal/nLzbeGQLPyBJoli.png" />
+              <img width="100%" src="static/Ctrl.jpeg" />
             </span>
           </TweenOne>
-          <QueueAnim
-            className={`${props.className}-text`}
-            type={animType.queue}
-            key="text"
-            leaveReverse
-            ease={['easeOutCubic', 'easeInCubic']}
-            id={`${props.id}-textWrapper`}
-          >
-            <h1 key="h1" id={`${props.id}-title`}>
-              核心理念A
-            </h1>
-            <p key="p" id={`${props.id}-content`}>
-              Fasten Tech致力于...
-            </p>
-          </QueueAnim>
         </OverPack>
       </div>
     );
   }
 }
-
 
 export default Content;

@@ -4,9 +4,8 @@ import TweenOne from 'rc-tween-one';
 import OverPack from 'rc-scroll-anim/lib/ScrollOverPack';
 
 class Content extends React.Component {
-
   static defaultProps = {
-    className: 'content1',
+    className: 'content0',
   };
 
   render() {
@@ -14,10 +13,10 @@ class Content extends React.Component {
     const isMode = props.isMode;
     delete props.isMode;
     const animType = {
-      queue: isMode ? 'bottom' : 'left',
+      queue: isMode ? 'bottom' : 'right',
       one: isMode ? { y: '+=30', opacity: 0, type: 'from' }
-        : { x: '+=30', opacity: 0, type: 'from' },
-    };
+        : { x: '-=30', opacity: 0, type: 'from' },
+    }
     return (
       <div
         {...props}
@@ -27,21 +26,6 @@ class Content extends React.Component {
           className={`content-template ${props.className}`}
           location={props.id}
         >
-          <QueueAnim
-            type={animType.queue}
-            className={`${props.className}-text`}
-            key="text"
-            leaveReverse
-            ease={['easeOutCubic', 'easeInCubic']}
-            id={`${props.id}-textWrapper`}
-          >
-            <h1 key="h1" id={`${props.id}-title`}>
-              核心理念B
-            </h1>
-            <p key="p" id={`${props.id}-content`}>
-              Fasten Tech将打造...
-            </p>
-          </QueueAnim>
           <TweenOne
             key="img"
             animation={animType.one}
@@ -50,13 +34,26 @@ class Content extends React.Component {
             resetStyleBool
           >
             <span id={`${props.id}-img`}>
-              <img width="100%" src="https://zos.alipayobjects.com/rmsportal/tvQTfCupGUFKSfQ.png" />
+              <img width="100%" src="static/Whole.jpeg" />
             </span>
           </TweenOne>
+          <QueueAnim
+            className={`${props.className}-text`}
+            type={animType.queue}
+            key="text"
+            leaveReverse
+            ease={['easeOutCubic', 'easeInCubic']}
+            id={`${props.id}-textWrapper`}
+          >
+            <h1 key="h1" id={`${props.id}-title`}>
+              整机方案咨询
+            </h1>
+          </QueueAnim>
         </OverPack>
       </div>
     );
   }
 }
+
 
 export default Content;

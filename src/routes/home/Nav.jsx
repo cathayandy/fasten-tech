@@ -27,9 +27,10 @@ class Header extends React.Component {
     const isMode = props.isMode;
     delete props.isMode;
     const navData = {
-        content_0_0: '首页',
-        content_2_0: '核心理念',
-        content_9_0: '团队介绍',
+        carousel: '首页',
+        cases: '合作案例',
+        service1: '提供服务',
+        team: '团队介绍',
         footer_1_0: '联系我们',
     };
     const navChildren = Object.keys(navData)
@@ -44,7 +45,7 @@ class Header extends React.Component {
         animation={{ x: -30, type: 'from', ease: 'easeOutQuad' }}
         id={`${this.props.id}-logo`}
       >
-        <img width="100%" src="https://zos.alipayobjects.com/rmsportal/IiCDSwhqYwQHLeU.svg" />
+        <h1>FastenTech</h1>
       </TweenOne>
       {isMode ? (<div
         className={`${this.props.className}-phone-nav${this.state.phoneOpen ? ' open' : ''}`}

@@ -1,9 +1,9 @@
 @import './custom.less';
 
-@content7: content7;
-.@{content7} {
+@team: team;
+.@{team} {
   &-wrapper {
-    height: 500px;
+    height: 960px;
     overflow: hidden;
   }
   > h1 {
@@ -17,16 +17,16 @@
     top: 25%;
     padding: 20px 0;
     > li {
-      width: 33.33%;
       padding: 0 4%;
+      margin: 20px auto 40px;
       display: inline-block;
       text-align: center;
       &.queue-anim-leaving {
         position: relative !important;
       }
       .icon {
-        width: 240px;
-        height: 150px;
+        width: 180px;
+        height: 180px;
         overflow: hidden;
         margin: auto;
         display: flex;
@@ -37,13 +37,19 @@
         margin: 10px auto;
       }
     }
+    > li.line-one {
+      width: 50%;      
+    }
+    > li.line-two {
+      width: 33.33%;      
+    }
   }
 }
 
 @media screen and (max-width: 767px) {
-  .@{content7}-wrapper {
-    height: 960px;
-    .@{content7} {
+  .@{team}-wrapper {
+    height: 1600px;
+    .@{team} {
       width: 90%;
       max-width: 100%;
       > h1{

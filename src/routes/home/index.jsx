@@ -4,10 +4,12 @@ import enquire from 'enquire.js';
 import { scrollScreen } from 'rc-scroll-anim';
 
 import Nav from './Nav';
-import Content0 from './Content0';
-import Content1 from './Content1';
-import Content2 from './Content2';
-import Content3 from './Content3';
+import Carousel from './Carousel';
+import Service1 from './Service1';
+import Service2 from './Service2';
+import Service3 from './Service3';
+import Cases from './Cases';
+import Team from './Team';
 import Footer from './Footer';
 
 import './less/antMotion_style.less';
@@ -29,7 +31,7 @@ export default class Home extends React.Component {
 
   enquireScreen = (cb) => {
     /* eslint-disable no-unused-expressions */
-    enquire.register('only screen and (min-width: 320px) and (max-width: 767px)', {
+    enquire.register('only screen and (max-width: 767px)', {
       match: () => {
         cb && cb(true);
       },
@@ -43,10 +45,12 @@ export default class Home extends React.Component {
   render() {
     const children = [
       <Nav id="nav_0_0" key="nav_0_0" isMode={this.state.isMode}/>,
-      <Content0 id="content_0_0" key="content_0_0" isMode={this.state.isMode}/>,
-      <Content1 id="content_2_0" key="content_2_0" isMode={this.state.isMode}/>,
-      <Content2 id="content_3_0" key="content_3_0" isMode={this.state.isMode}/>,
-      <Content3 id="content_9_0" key="content_9_0" isMode={this.state.isMode}/>,
+      <Carousel id="carousel" key="carousel" isMode={this.state.isMode}/>,
+      <Cases id="cases" key="cases" isMode={this.state.isMode}/>,
+      <Service1 id="service1" key="service1" isMode={this.state.isMode}/>,
+      <Service2 id="service2" key="service2" isMode={this.state.isMode}/>,
+      <Service3 id="service3" key="service3" isMode={this.state.isMode}/>,
+      <Team id="team" key="team" isMode={this.state.isMode}/>,
       <Footer id="footer_1_0" key="footer_1_0" isMode={this.state.isMode}/>,
     ];
     return (

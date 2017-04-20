@@ -26,9 +26,9 @@ class Content extends React.Component {
     const props = { ...this.props };
     delete props.isMode;
     const dataSource = [
-      { icon: 'https://zos.alipayobjects.com/rmsportal/WBnVOjtIlGWbzyQivuyq.png', title: '团队成员A', content: '成员A简介' },
-      { icon: 'https://zos.alipayobjects.com/rmsportal/YPMsLQuCEXtuEkmXTTdk.png', title: '团队成员B', content: '成员B简介' },
-      { icon: 'https://zos.alipayobjects.com/rmsportal/EkXWVvAaFJKCzhMmQYiX.png', title: '团队成员C', content: '成员C简介' },
+      { icon: 'static/RedEx.jpeg', title: '绝缘子红外性能检测', content: '' },
+      { icon: 'static/Factory.jpeg', title: '厂区巡检', content: '' },
+      { icon: 'static/Photo.jpeg', title: '摄影拍照', content: '' },
     ];
     const listChildren = dataSource.map(this.getBlockChildren);
     return (
@@ -47,7 +47,7 @@ class Content extends React.Component {
             reverseDelay={300}
             id={`${props.id}-title`}
           >
-            团队介绍
+             合作案例
           </TweenOne>
           <QueueAnim
             component="ul" type="bottom" key="block" leaveReverse
