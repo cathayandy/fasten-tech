@@ -10,6 +10,7 @@ import Service2 from './Service2';
 import Service3 from './Service3';
 import Cases from './Cases';
 import Team from './Team';
+import Speak from './Speak';
 import Footer from './Footer';
 
 import './less/antMotion_style.less';
@@ -31,7 +32,7 @@ export default class Home extends React.Component {
 
   enquireScreen = (cb) => {
     /* eslint-disable no-unused-expressions */
-    enquire.register('only screen and (max-width: 767px)', {
+    enquire.register('screen and (max-width: 767px)', {
       match: () => {
         cb && cb(true);
       },
@@ -50,7 +51,8 @@ export default class Home extends React.Component {
       <Service1 id="service1" key="service1" isMode={this.state.isMode}/>,
       <Service2 id="service2" key="service2" isMode={this.state.isMode}/>,
       <Service3 id="service3" key="service3" isMode={this.state.isMode}/>,
-      <Team id="team" key="team" isMode={this.state.isMode}/>,
+      // <Team id="team" key="team" isMode={this.state.isMode}/>,
+      <Speak id="speak" key="speak" isMode={this.state.isMode}/>,
       <Footer id="footer_1_0" key="footer_1_0" isMode={this.state.isMode}/>,
     ];
     return (

@@ -18,6 +18,22 @@ class Content extends React.Component {
       one: isMode ? { y: '+=30', opacity: 0, type: 'from' }
         : { x: '+=30', opacity: 0, type: 'from' },
     };
+    const text = (
+      <QueueAnim
+        type={animType.queue}
+        className={`${props.className}-text`}
+        key="text"
+        leaveReverse
+        ease={['easeOutCubic', 'easeInCubic']}
+        id={`${props.id}-textWrapper`}
+      >
+        <h1 key="h1" id={`${props.id}-title`}>
+          控制和APP方案咨询
+        </h1>
+        <p key="p" id={`${props.id}-content`}>
+        </p>
+      </QueueAnim>
+    );
     return (
       <div
         {...props}
@@ -27,20 +43,7 @@ class Content extends React.Component {
           className={`content-template ${props.className}`}
           location={props.id}
         >
-          <QueueAnim
-            type={animType.queue}
-            className={`${props.className}-text`}
-            key="text"
-            leaveReverse
-            ease={['easeOutCubic', 'easeInCubic']}
-            id={`${props.id}-textWrapper`}
-          >
-            <h1 key="h1" id={`${props.id}-title`}>
-              控制和APP方案咨询
-            </h1>
-            <p key="p" id={`${props.id}-content`}>
-            </p>
-          </QueueAnim>
+          { isMode ? null : text }
           <TweenOne
             key="img"
             animation={animType.one}
@@ -52,6 +55,7 @@ class Content extends React.Component {
               <img width="100%" src="static/Ctrl.jpeg" />
             </span>
           </TweenOne>
+          { isMode ? text : null }
         </OverPack>
       </div>
     );

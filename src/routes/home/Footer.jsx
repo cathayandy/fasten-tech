@@ -42,7 +42,7 @@ class Footer extends React.Component {
     const logoContent = { img: 'https://zos.alipayobjects.com/rmsportal/IiCDSwhqYwQHLeU.svg', content: 'Fasten Tech' };
     const dataSource = [
       { title: '微信二维码', content: '', contentLink: '#' },
-      { title: '联系我们', content: '地址: 北京市海淀区中关村丹棱SOHO B1层\n电话: 15101526040\n邮件: Info@fasten-tech.cn\n网址: www.fasten-tech.cn\n加入我们: hr@fasten-tech.cn', contentLink: '\ntel://15101526040\nmailto://Info@fasten-tech.cn\nhttp://www.fasten-tech.cn\nmailto://hr@fasten-tech.cn' },
+      { title: '联系我们', content: '地址: 北京市海淀区中关村丹棱SOHO B1层\n电话: 13240260050\n邮件: Info@fasten-tech.cn\n网址: www.fasten-tech.cn\n加入我们: hr@fasten-tech.cn', contentLink: '\ntel://15101526040\nmailto://Info@fasten-tech.cn\nhttp://www.fasten-tech.cn\nmailto://hr@fasten-tech.cn' },
       { title: '合作伙伴', content: '媒体: 新京报 新华社 搜狐 创业邦 36Kr 蜻蜓FM 今日头条\n高校: 清华大学 北京航空航天大学 湖南大学 南京大学', contentLink: '' },
     ];
     const liChildrenToRender = dataSource.map(this.getLiChildren);

@@ -30,7 +30,8 @@ class Header extends React.Component {
         carousel: '首页',
         cases: '合作案例',
         service1: '提供服务',
-        team: '团队介绍',
+        // team: '团队介绍',
+        speak: '董事长寄语',
         footer_1_0: '联系我们',
     };
     const navChildren = Object.keys(navData)
@@ -45,7 +46,7 @@ class Header extends React.Component {
         animation={{ x: -30, type: 'from', ease: 'easeOutQuad' }}
         id={`${this.props.id}-logo`}
       >
-        <h1>FastenTech</h1>
+        <h1>方星科技</h1>
       </TweenOne>
       {isMode ? (<div
         className={`${this.props.className}-phone-nav${this.state.phoneOpen ? ' open' : ''}`}

@@ -1,12 +1,10 @@
 
 @media screen and (min-width: 768px) {
-#nav_0_0-logo { width: 30px }
 #content_0_0-content { margin: 20px 0px 20px 0px }
 #content_0_0-title { left: 0px; font-size: 60px }
 #footer_1_0-logo .logo { width: 20% }
 #footer_1_0-logo { width: 20% }
 }
 @media screen and (max-width: 767px) {
-#nav_0_0-logo { width: 30px }
 #footer_1_0-logo .logo { width: 15% }
 }
