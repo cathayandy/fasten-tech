@@ -15,8 +15,11 @@ class Content extends React.Component {
 
   getBlockChildren = (item, i) =>(
     <li key={i} id={`${this.props.id}-block${i}`}>
+      <div className={`icon icon-${i}`}>
+        <img src={item.icon} height="100%" />
+      </div>
       <div className="icon">
-        <img src={item.icon} width="100%" />
+        <img src={item.logo} height="100%" />
       </div>
       <h3>{item.title}</h3>
       <p>{item.content}</p>
@@ -26,9 +29,9 @@ class Content extends React.Component {
     const props = { ...this.props };
     delete props.isMode;
     const dataSource = [
-      { icon: 'static/RedEx.jpeg', title: '绝缘子红外性能检测', content: '' },
-      { icon: 'static/Factory.jpeg', title: '厂区巡检', content: '' },
-      { icon: 'static/Photo.jpeg', title: '摄影拍照', content: '' },
+      { icon: 'static/RedEx.jpeg', logo: 'static/Shuanghui.png', title: '绝缘子红外性能检测', content: '双汇电力' },
+      { icon: 'static/Factory.jpeg', logo: 'static/Huadong.jpeg', title: '厂区巡检', content: '华东动力' },
+      { icon: 'static/Photo.jpeg', logo: 'static/BYTS.jpeg', title: '摄影拍照', content: '北京青年旅行社' },
     ];
     const listChildren = dataSource.map(this.getBlockChildren);
     return (
